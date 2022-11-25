@@ -33,5 +33,8 @@ func TestReadThroughCache(t *testing.T) {
 	val, err := cache.Get(context.Background(), "123")
 	assert.NoError(t, err)
 	assert.Equal(t, "abc", val)
+	val, err = redis.Get(context.Background(), "123")
+	assert.NoError(t, err)
+	assert.Equal(t, "abc", val)
 	cache.Delete(context.Background(), "123")
 }
