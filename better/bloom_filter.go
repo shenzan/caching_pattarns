@@ -15,6 +15,10 @@ var (
 	hmd5  = md5.New()
 )
 
+type BloomFilter interface {
+	Exist(key string) bool
+}
+
 type filter struct {
 	arr [1000]bool
 }
