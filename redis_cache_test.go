@@ -15,7 +15,7 @@ func TestRedisCache(t *testing.T) {
 		DB:       0,
 	})
 	cache := &RedisCache{
-		client: client,
+		Client: client,
 	}
 	ctx := context.Background()
 	cache.Delete(ctx, "name")
